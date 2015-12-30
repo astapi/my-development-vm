@@ -1,0 +1,5 @@
+include_recipe '../cookbooks/common/default.rb'
+include_recipe '../cookbooks/erlang/default.rb'
+include_recipe '../cookbooks/elixir/default.rb'
+include_recipe '../cookbooks/ruby/default.rb'
+include_recipe '../cookbooks/go/default.rb'

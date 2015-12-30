@@ -1,0 +1,17 @@
+execute 'apt-get update' do
+  command 'apt-get update'
+end
+
+%w(make gcc unzip git wget).each do |name|
+  package name do
+    action :install
+  end
+end
+
+file "/etc/localtime" do
+  action :delete
+end
+
+link "/etc/localtime" do
+  to "/usr/share/zoneinfo/Japan"
+end
