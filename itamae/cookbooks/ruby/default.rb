@@ -47,7 +47,7 @@ end
 
 node["rbenv"]["gems"].each do |gem|
   execute "gem install #{gem}" do
-    command ". #{RBENV_SCRIPT}; gem install #{gem}; rbenv rehash"
-    not_if ". #{RBENV_SCRIPT}; gem list | grep #{gem}"
+    command ". #{RBENV_SCRIPT}; rbenv exec gem install #{gem}; rbenv rehash"
+    not_if ". #{RBENV_SCRIPT}; rbenv exec gem list | grep #{gem}"
   end
 end
