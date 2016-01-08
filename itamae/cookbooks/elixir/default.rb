@@ -12,8 +12,10 @@ node.reverse_merge!(
   }
 )
 
-package 'libssl-dev' do
-  action :install
+%w(libssl-dev inotify-tools).each do |lib|
+  package lib do
+    action :install
+  end
 end
 
 #execute 'Add Erlang Solutions repo' do
