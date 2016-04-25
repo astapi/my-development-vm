@@ -15,3 +15,9 @@ end
 link "/etc/localtime" do
   to "/usr/share/zoneinfo/Japan"
 end
+
+#remote_directory '/home/vagrant/.ssh' do
+#  mode '0700'
+#  owner 'vagrant'
+#  source '~/.ssh'
+#end

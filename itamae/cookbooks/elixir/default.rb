@@ -1,6 +1,6 @@
 node.reverse_merge!(
   elixir: {
-    zip: 'https://github.com/elixir-lang/elixir/releases/download/v1.2.0/Precompiled.zip',
+    zip: 'https://github.com/elixir-lang/elixir/releases/download/v1.2.4/Precompiled.zip',
     zip_file: 'Precompiled.zip'
   }
 )
