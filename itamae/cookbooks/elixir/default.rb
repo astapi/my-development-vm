@@ -1,6 +1,6 @@
 node.reverse_merge!(
   elixir: {
-    zip: 'https://github.com/elixir-lang/elixir/releases/download/v1.2.4/Precompiled.zip',
+    zip: 'https://github.com/elixir-lang/elixir/releases/download/v1.3.1/Precompiled.zip',
     zip_file: 'Precompiled.zip'
   }
 )
@@ -14,7 +14,7 @@ end
 execute 'Download elixir' do
   cwd '/tmp'
   command "wget #{node[:elixir][:zip]}"
-  not_if "test -e ./#{node[:elixir][:zip_file]}"
+#  not_if "test -e ./#{node[:elixir][:zip_file]}"
 end
 
 execute 'unzip elixir' do
@@ -22,7 +22,7 @@ execute 'unzip elixir' do
   command "\
     sudo unzip #{node[:elixir][:zip_file]} -d /opt/elixir
   "
-  not_if 'which iex'
+#  not_if 'which iex'
 end
 
 execute 'setup path' do

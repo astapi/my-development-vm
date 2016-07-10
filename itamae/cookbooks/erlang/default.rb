@@ -1,8 +1,7 @@
 node.reverse_merge!(
   erlang: {
-    #source: 'http://www.erlang.org/download/otp_src_18.0.tar.gz', 
-    source: 'http://www.erlang.org/download/otp_src_18.3.tar.gz',
-    source_name: 'otp_src_18.'
+    source: 'http://erlang.org/download/otp_src_19.0.tar.gz',
+    source_name: 'otp_src_19.0'
   }
 )
 

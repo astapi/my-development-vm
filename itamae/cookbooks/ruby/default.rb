@@ -1,4 +1,4 @@
-%w(libffi-dev build-essential libffi-dev libssl-dev libreadline-dev zlib1g-dev).each do |name|
+%w(libffi-dev build-essential libffi-dev libssl-dev libreadline-dev zlib1g-dev ruby-dev).each do |name|
   package name do
     action :install
   end
