@@ -40,14 +40,22 @@ node["rbenv"]["versions"].each do |version|
   end
 end
 
+execute "change owner" do
+  user "root"
+  command "chown -R #{node["user"]}:#{node["user"]} #{RBENV_DIR}"
+end
+
 execute "set global ruby #{node["rbenv"]["global"]}" do
+  user node["user"]
   command ". #{RBENV_SCRIPT}; rbenv global #{node["rbenv"]["global"]}; rbenv rehash"
   not_if ". #{RBENV_SCRIPT}; rbenv global | grep #{node["rbenv"]["global"]}"
 end
 
 node["rbenv"]["gems"].each do |gem|
   execute "gem install #{gem}" do
+    user node["user"]
     command ". #{RBENV_SCRIPT}; rbenv exec gem install #{gem}; rbenv rehash"
     not_if ". #{RBENV_SCRIPT}; rbenv exec gem list | grep #{gem}"
   end
 end
+

@@ -4,3 +4,4 @@ rbenv:
   gloval: "2.3.0"
   gems:
     - "bundler"
+user: "vagrant"
