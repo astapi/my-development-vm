@@ -1,7 +1,7 @@
 rbenv:
   versions:
     - "2.3.0"
-  gloval: "2.3.0"
+  global: "2.3.0"
   gems:
     - "bundler"
 user: "vagrant"
